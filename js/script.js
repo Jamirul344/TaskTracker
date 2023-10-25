@@ -1,4 +1,5 @@
 const addText = document.getElementById("add-text");
+const button = document.getElementById("addTask")
 const list = document.getElementById("list-container");
 
 function addTask() {
@@ -17,6 +18,13 @@ function addTask() {
     saveData();
 
 }
+
+addText.addEventListener("keypress", function(e){
+    if(e.key === "Enter"){
+        e.preventDefault();
+        button.click();
+    }
+});
 
 list.addEventListener("click", function (e) {
     if (e.target.tagName === "LI") {
